@@ -5,8 +5,10 @@
 
 var tropowebapi = require('tropo-webapi');
 var express = require('express');
+var app = express();
+var http = require('http');
+var server = http.createServer(app);
 
-var app = express.createServer();
 
 app.post('/', function(req, res){
 	// Create a new instance of the TropoWebAPI object.
@@ -18,5 +20,5 @@ app.post('/', function(req, res){
 });
 
 
-app.listen(8000);
+server.listen(8000);
 console.log('Server running on http://0.0.0.0:8000/')
